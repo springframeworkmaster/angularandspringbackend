@@ -52,7 +52,7 @@ public class Bootstrap implements CommandLineRunner{
             a3.setState("IA");
             a3.setPincode("52260");
 
-            personRepository.save(Person.builder().firstName("Sai").lastName("Krisha").email("sai@gmail.com").phone("6034179197").address(a1).build());
+            personRepository.save(Person.builder().firstName("Sai").lastName("Krishna").email("sai@gmail.com").phone("6034179197").address(a1).build());
             personRepository.save(Person.builder().firstName("Nilam").lastName("Khadka").email("nilam@gmail.com").phone("6034170517").address(a2).build());
             personRepository.save(Person.builder().firstName("Tirumal").lastName("Reddy").email("tirumal@gmail.com").phone("6034171217").address(a3).build());
             System.out.println("Person " + personRepository.count());
