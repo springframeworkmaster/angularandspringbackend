@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class PersonServiceImpl implements PersonService{
@@ -16,6 +17,10 @@ public class PersonServiceImpl implements PersonService{
         this.personRepository = personRepository;
     }
 
+    @Override
+    public Optional<Person> getPersonById(Long id) {
+        return personRepository.findById(id);
+    }
     @Override
     public List<Person> getAllPersons() {
 

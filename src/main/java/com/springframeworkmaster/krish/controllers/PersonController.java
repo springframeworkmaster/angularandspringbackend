@@ -6,6 +6,7 @@ import com.springframeworkmaster.krish.domain.Person;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("api")
@@ -17,6 +18,10 @@ public class PersonController{
         this.personService = personService;
     }
 
+    @GetMapping("/persons/{id}")
+    public Optional<Person> getPersonById(@PathVariable Long id){
+        return personService.getPersonById(id);
+    }
     @GetMapping("/persons")
     public List<Person> getAllPersons(){
         return personService.getAllPersons();

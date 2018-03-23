@@ -3,9 +3,11 @@ package com.springframeworkmaster.krish.services;
 import com.springframeworkmaster.krish.domain.Person;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface PersonService {
 
+    Optional<Person> getPersonById(Long id);
     List<Person> getAllPersons();
     Person createPerson(Person person);
     void deletePersonById(Long id);
