@@ -7,10 +7,6 @@ public class PersonList {
 
     public PersonList(){}
 
-    public PersonList(List<Person> persons) {
-        this.persons = persons;
-    }
-
     public List<Person> getPersons() {
         return persons;
     }

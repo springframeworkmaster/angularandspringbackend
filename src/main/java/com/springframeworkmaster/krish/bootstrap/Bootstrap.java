@@ -57,8 +57,6 @@ public class Bootstrap implements CommandLineRunner{
             personRepository.save(Person.builder().firstName("Tirumal").lastName("Reddy").email("tirumal@gmail.com").phone("6034171217").address(a3).build());
             System.out.println("Person " + personRepository.count());
 
-
-
         }
 
 

@@ -1,15 +1,18 @@
 package com.springframeworkmaster.krish.controllers;
 
 
+import com.springframeworkmaster.krish.domain.PersonList;
 import com.springframeworkmaster.krish.services.PersonService;
 import com.springframeworkmaster.krish.domain.Person;
+import org.apache.tomcat.util.http.parser.MediaType;
 import org.springframework.web.bind.annotation.*;
+import sun.misc.Request;
 
 import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("api")
+@RequestMapping(value="api")
 public class PersonController{
 
     private PersonService personService;
@@ -22,8 +25,8 @@ public class PersonController{
     public Optional<Person> getPersonById(@PathVariable Long id){
         return personService.getPersonById(id);
     }
-    @GetMapping("/persons")
-    public List<Person> getAllPersons(){
+    @RequestMapping(value="/persons", method = RequestMethod.GET, produces = "application/json")
+    public PersonList getAllPersons(){
         return personService.getAllPersons();
     }
 
