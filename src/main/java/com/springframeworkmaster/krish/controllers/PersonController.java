@@ -26,7 +26,7 @@ public class PersonController{
         return personService.getPersonById(id);
     }
     @RequestMapping(value="/persons", method = RequestMethod.GET, produces = "application/json")
-    public PersonList getAllPersons(){
+    public List<Person> getAllPersons(){
         return personService.getAllPersons();
     }
 

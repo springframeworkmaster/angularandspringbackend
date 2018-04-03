@@ -28,14 +28,14 @@ public class PersonServiceImpl implements PersonService{
         return personRepository.findById(id);
     }
     @Override
-    public PersonList getAllPersons() {
+    public List<Person> getAllPersons() {
         //Set<Person> persons = new HashSet<>();
         List<Person> persons = new ArrayList<>();
 
         personRepository.findAll().iterator().forEachRemaining(person->  persons.add(person));
         PersonList p = new PersonList();
         p.setPersons(persons);
-        return p;
+        return persons;
     }
     @Override
     public Person createPerson(Person person) {
