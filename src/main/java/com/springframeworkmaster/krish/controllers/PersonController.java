@@ -1,13 +1,8 @@
 package com.springframeworkmaster.krish.controllers;
 
-
-import com.springframeworkmaster.krish.domain.PersonList;
 import com.springframeworkmaster.krish.services.PersonService;
 import com.springframeworkmaster.krish.domain.Person;
-import org.apache.tomcat.util.http.parser.MediaType;
 import org.springframework.web.bind.annotation.*;
-import sun.misc.Request;
-
 import java.util.List;
 import java.util.Optional;
 
@@ -25,6 +20,7 @@ public class PersonController{
     public Optional<Person> getPersonById(@PathVariable Long id){
         return personService.getPersonById(id);
     }
+
     @RequestMapping(value="/persons", method = RequestMethod.GET, produces = "application/json")
     public List<Person> getAllPersons(){
         return personService.getAllPersons();
