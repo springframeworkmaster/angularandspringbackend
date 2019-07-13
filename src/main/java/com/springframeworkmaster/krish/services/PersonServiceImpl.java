@@ -34,6 +34,7 @@ public class PersonServiceImpl implements PersonService{
 
         personRepository.findAll().iterator().forEachRemaining(person->  persons.add(person));
         PersonList p = new PersonList();
+        
         p.setPersons(persons);
         return persons;
     }
